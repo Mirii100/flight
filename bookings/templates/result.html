@@ -1,0 +1,20 @@
+{% load static %}
+<link rel="stylesheet" href="{%static 'sty.css'%}">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registered members </title>
+</head>
+<body>
+    REGISTERED MEMBERS
+    <BR></BR>
+    {% for rs in reg %}
+{{rs}}
+<br><br>
+{%endfor%}
+<a href="sign/reserve">Home</a>
+</body>
+</html>

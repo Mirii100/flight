@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <form action="sign/reserve" method="post">
+        {% csrf_token %}
+        <div class="main">										<label for="roundtrip">
+					
+    
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" class="signup-form">
+                        <h2>Register </h2>
+                        <p class="desc">to get discount 10% when pre - order <span>“Batman Beyond”</span></p>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="fname" id="name" placeholder="Your Name"/>
+                        </div>										<label for="roundtrip">
+                            <div class="form-group">
+                            <input type="text" class="form-input" name="password1" id="password" placeholder="Password"/>
+                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                            <input type="text" class="form-input" name="password2" id="password" placeholder="Password"/>
+                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="agree_term" id="agree-term" class="agree-term" />
+                            return redirect('register')                     <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="sign/sign" class="term-service">Terms of service</a></label>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit submit" value="Signup"/>
+                            <a href="sign" class="submit-link submit">Sign in</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+           
+        </div>
+    
+        
+        <script src="{%static 'signStyles/vendor/jquery/jquery.min.js'%}"></script>
+        <script src="{% static 'signStyle/js/main.js'%}"></script>
+    
+    </form>
+    <div>
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% load static %}
+<link rel="stylesheet" href="{%static 'sty.css'%}">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page </title>
+</head>
+<body><center>
+  <h2>welcome to login page </h2>
+    <form action="results" method="post">
+
+{% csrf_token%}
+<label for="userName">userName</label>
+        <input type="text" name="userName" placeholder="userName" style="height: 25px; border: none;"><br><br>
+        <label for="email">email</label>
+        <input type="Email" name="Email" id=""style="height: 25px; border: none;align-items:center"><br><br>
+        <input type="text" class="form-input" name="password1" id="password" placeholder="Password"/>
+         <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+        <input type="submit" value="login" id="btn"style="
+        background-color: rgb(19, 19, 214);
+        color: #fff;
+        
+        font-weight: 700;
+        height: 55px;
+        padding: 10px 35px;
+        font-size: 28px;
+        border: none;
+        display: flex;
+        margin-left:200px;
+        border-radius: 20px;
+        margin-right: 200px;
+        text-transform: capitalize;">
+    </form>
+</center>
+<div>
+    {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
+</div>
+</body>
+</html>
